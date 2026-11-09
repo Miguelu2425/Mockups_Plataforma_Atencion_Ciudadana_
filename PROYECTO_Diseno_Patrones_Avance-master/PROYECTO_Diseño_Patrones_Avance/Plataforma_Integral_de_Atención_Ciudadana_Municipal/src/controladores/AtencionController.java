@@ -69,6 +69,16 @@ public class AtencionController {
     }
 
     /**
+     * Controlador: busca un tramite por su codigo unico (pantalla Seguimiento de tramite).
+     *
+     * @param codigo codigo del expediente
+     * @return expediente encontrado
+     */
+    public Expediente buscarTramite(String codigo) {
+        return mesaPartes.buscarTramite(codigo == null ? "" : codigo.trim().toUpperCase());
+    }
+
+    /**
      * Controlador: lista los tramites del ciudadano con el DNI indicado.
      *
      * @param dni DNI del ciudadano o null para listar todos

@@ -209,6 +209,17 @@ public class MesaPartesFacade {
     }
 
     /**
+     * Facade: busca un expediente por su codigo unico para la pantalla de seguimiento.
+     *
+     * @param codigo codigo del expediente (ej. EXP-2026-0001)
+     * @return expediente encontrado
+     * @throws RepositorioException si no existe un expediente con ese codigo
+     */
+    public Expediente buscarTramite(String codigo) {
+        return repositorio.buscarPorCodigo(codigo);
+    }
+
+    /**
      * Facade: delega el cambio de estado directo al repositorio activo.
      */
     public Expediente cambiarEstado(String codigo, String estadoNuevo) {
